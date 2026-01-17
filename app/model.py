@@ -12,7 +12,9 @@ def load_model(model_path:str):
     """loads AI model from model_path"""
     if ENV == 'production':
         import tensorflow as tf
-        return tf.keras.models.load_model(model_path)
+        model = tf.keras.models.load_model(model_path)
+        model.trainable = False
+        return model
     return model_placeholder
     
 def process_input(data:str):
