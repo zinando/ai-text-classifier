@@ -4,21 +4,6 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 ENV = os.getenv("ENV", "development").lower()
 
-# # model = None
-
-# @asynccontextmanager
-# async def lifespan(app: FastAPI):
-#     # STARTUP
-#     global model
-#     import tensorflow as tf
-#     if ENV == "production":
-#         model = tf.keras.models.load_model("models/model.h5")
-
-
-#     yield  # App runs here
-
-#     # SHUTDOWN
-#     print("App shutting down")
 def model_placeholder(input):
     result = 0.95 if 'good' in input else 0.45
     return result
