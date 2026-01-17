@@ -1,4 +1,4 @@
-# FastAPI AI Text Classifier
+# AI Text Classifier
 
 A lightweight FastAPI backend that demonstrates how AI models (e.g. TensorFlow, PyTorch, or external inference services) can be cleanly integrated into a modern API service.
 
@@ -42,10 +42,13 @@ The model layer is intentionally abstracted to allow:
 ai-text-classifier/
 │
 ├── app/
-│ ├── main.py # API routes
+│ ├── myapp.py # API routes
 │ ├── schemas.py # Request & response models
 │ └── model.py # AI inference abstraction
 │
+|__ models/
+|   |__ model.h5
+|
 ├── requirements.txt
 └── README.md
 
@@ -67,8 +70,8 @@ ai-text-classifier/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/fastapi-ai-text-classifier.git
-cd fastapi-ai-text-classifier
+git clone https://github.com/zinando/ai-text-classifier.git
+cd ai-text-classifier
 
 2. Create a virtual environment
 python -m venv venv
@@ -78,7 +81,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 4. Run the application
-uvicorn app.main:app --reload
+uvicorn app.myapp:app --host 0.0.0.0 --port 8000 --reload
 
 📄 API Documentation
 
